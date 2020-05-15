@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import ListContats from "./ListContacts";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const contacts = [
+  {
+    id: "karen",
+    name: "Karen Isgrigg",
+    handle: "karen_isgrigg",
+    avatarURL: "http://localhost:5001/karen.jpg",
+    gone: Boolean,
+  },
+  {
+    id: "richard",
+    name: "Richard Kalehoff",
+    handle: "richardkalehoff",
+    avatarURL: "http://localhost:5001/richard.jpg",
+    gone: Boolean,
+  },
+  {
+    id: "tyler",
+    name: "Tyler McGinnis",
+    handle: "tylermcginnis",
+    avatarURL: "http://localhost:5001/tyler.jpg",
+    gone: Boolean,
+  },
+];
+const hasGone = [
+  { name: "karen", isGone: "yes" },
+  { name: "richard", isGone: "no" },
+  { name: "tyler", isGone: "yes" },
+];
+
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <ListContats contacts={contacts} hasGone={hasGone} />
+      </div>
+    );
+  }
 }
-
 export default App;
